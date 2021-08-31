@@ -1,25 +1,24 @@
 #include "main.h"
 
 /**
- * print_sign - prints the sign of a number
- * @n: the int to check
- * Return: 1 and prints + if n is greater than zero
- * 0 and prints 0 if n is zero
- * -1 and prints - if n is less than zero
+ * main - check the code for ALX School students.
+ *
+ * Program that prints Holberton, followed by a new line
+ *
+ * Return: always 0 (success)
  */
-int print_sign(int n)
+
+int main(void)
 {
-	if (n > 0)
-	{
-		_putchar('+');
-		return (1);
-	} else if (n == 0)
-	{
-		_putchar(48);
-		return (0);
-	} else if (n < 0)
-	{
-		_putchar('-');
-	}
-		return (-1);
+  char s[] = "_putchar";
+  int i = 0;
+
+  while (s[i] != '\0')
+    {
+      _putchar(s[i]);
+      i++;
+    }
+  _putchar(10);
+
+  return (0);
 }
