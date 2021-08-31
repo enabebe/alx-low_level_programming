@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - Prints Holberton
+ * @void: Empty parameter list for main.
  *
- * Program that prints Holberton, followed by a new line
+ * Description: Prints Holberton w/out stdio
  *
- * Return: always 0 (success)
- */
-
+ * Return: 0 for success
+*/
 int main(void)
 {
-  char s[] = "_putchar";
-  int i = 0;
-
-  while (s[i] != '\0')
-    {
-      _putchar(s[i]);
-      i++;
-    }
-  _putchar(10);
-
-  return (0);
+	_putchar('H');
+	_putchar('o');
+	_putchar('l');
+	_putchar('b');
+	_putchar('e');
+	_putchar('r');
+	_putchar('t');
+	_putchar('o');
+	_putchar('n');
+	_putchar('\n');
+	return (0);
 }
