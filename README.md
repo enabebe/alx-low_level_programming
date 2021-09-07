@@ -1,1 +1,1 @@
-This repository contains low level programming exercices.
+This repository conntains low level programming exercices.
