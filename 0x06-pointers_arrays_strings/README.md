@@ -21,3 +21,11 @@
 _putchar.c is a function that replaces the standard library function putchar().
 
 main.h is the header file containing all the function prototypes.
+
+100-print_number.c - function that prints an integer without: arrays, pointers, or hard-coded special values.
+
+101-magic.c - Add one line to this [code](this code), so that the program prints a[2] = 98, followed by a new line.
+
+102-infinite_add.c - function that adds two numbers stored as strings.
+
+103-print_buffer.c - function that prints a buffer with special formatting.
