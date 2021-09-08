@@ -16,16 +16,16 @@
 
 7-leet.c is a function that encodes a string into 1337.
 
-8-rot13.c is a function that encodes a string using rot13.
+100-rot13.c is a function that encodes a string using rot13.
 
 _putchar.c is a function that replaces the standard library function putchar().
 
 main.h is the header file containing all the function prototypes.
 
-100-print_number.c - function that prints an integer without: arrays, pointers, or hard-coded special values.
+101-print_number.c - function that prints an integer without: arrays, pointers, or hard-coded special values.
 
-101-magic.c - Add one line to this [code](this code), so that the program prints a[2] = 98, followed by a new line.
+102-magic.c - Add one line to this [code](this code), so that the program prints a[2] = 98, followed by a new line.
 
-102-infinite_add.c - function that adds two numbers stored as strings.
+103-infinite_add.c - function that adds two numbers stored as strings.
 
-103-print_buffer.c - function that prints a buffer with special formatting.
+104-print_buffer.c - function that prints a buffer with special formatting.
