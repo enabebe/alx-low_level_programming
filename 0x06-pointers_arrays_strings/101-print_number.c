@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h" 
-void print(long n)
+void print_number(int n)
 {
     // If number is smaller than 0, put a - sign
     // and change number to positive
@@ -19,10 +19,10 @@ void print(long n)
 }
   
 // Driver program to test abvoe function
-int main()
+int main(void)
 {
-    long int n = 12045;
+    	int n = 12045;
     
-    	print(n);
-    return 0;
+    		print(n);
+    	return 0;
 }
