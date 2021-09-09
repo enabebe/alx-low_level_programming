@@ -11,6 +11,7 @@ void print_number(int n)
 {
 	unsigned int num;
 /*check if number is negative*/
+	
 	num = n;
 	if (n < 0)
 	{
