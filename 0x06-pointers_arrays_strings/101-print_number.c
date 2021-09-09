@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 /**
  *print_number - prints an integer.
  *only using the putchar function.
@@ -9,18 +9,20 @@
  */
 void print_number(int n)
 {
-   	 // If number is smaller than 0, put a - sign 
-    	// and change number to positive 
-	if (n < 0) 
-	{ 
-        	putchar('-'); 
-        	n = -n; 
-	} 
-  
-    // Remove the last digit and recur 
-    	if (n/10) 
-        	print_number(n/10); 
-  
-    // Print the last digit 
-    	putchar(n%10 + '0'); 
+	unsigned int num;
+/*check if number is negative*/
+
+	num = n;
+
+	if (n < 0)
+	{
+		_putchar(45);
+		num = -n;
+	}
+/* print number by recursion*/
+	if (num / 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar((num % 10) + '0');
 }
