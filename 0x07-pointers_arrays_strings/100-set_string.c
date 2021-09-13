@@ -5,7 +5,7 @@
   * @s: the value to modify
   * @to: the value to assign
   *
-  * Return: Nothing.
+  * Return: Nothing
   */
 void set_string(char **s, char *to)
 {
