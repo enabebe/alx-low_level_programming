@@ -8,41 +8,33 @@
  *
  * Return: 0 if no errors, else 1
  */
-#define MIN(x, y) (((x) < (y)) ? (x) : (y))
-
-const int INF = 100000;
-
-//k is number of denominations of the coin or length of d
-int coin_change(int d[], int n, int k) 
+int main(int argc, char *argv[])
 {
-  	int M[n+1];
+	int a, n = 0, i, t;
+	int c[5] = {25, 10, 5, 2, 1};
 
-  	M[0] = 0;
-
-  	int i, j;
-
-  	for(j=1; j<=n; j++) 
+	if (argc != 2)
 	{
-    		int minimum = INF;
-
-    		for(i=1; i<=k; i++) 
+		puts("Error");
+		return (1);
+	}
+	a = atoi(argv[1]);
+	if (a <= 0)
+	{
+		puts("0");
+		return (1);
+	}
+	else
+	{
+		for (i = 0; i < 5; i++)
 		{
-      			if(j >= d[i]) 
-			{
-        			minimum = MIN(minimum, 1+M[j-d[i]]);
-      			}
-    		}
-    	M[j] = minimum;
-  	}
-
-  	return M[n];
-}
-
-int main() 
-{
-  // array starting from 1, element at index 0 is fake
-  	int d[] = {0, 1, 2, 3};
-
-  	printf("%d\n", coin_change(d, 5, 3)); //to make 5. Number of denominations = 3
-  	return 0;
+			t = a / c[i];
+			a -= t * c[i];
+			n += t;
+			if (a == 0)
+				break;
+		}
+	}
+	printf("%d\n", n);
+	return (0);
 }
