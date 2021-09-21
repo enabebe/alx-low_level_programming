@@ -94,5 +94,4 @@ char **strtow(char *str)
 		list[i][k] = '\0';
 	}
 	list[i] = NULL;
-	return (list);
-
+	return (0);
