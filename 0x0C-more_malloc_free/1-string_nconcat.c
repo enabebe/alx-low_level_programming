@@ -1,61 +1,52 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-/**
- * _strlen - string len
- * @s: string
- *
- * Return: int len
- */
-int _strlen(char *s)
-{
-	int i = 0;
 
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
-}
 /**
- * string_nconcat - concatenates string s1 with nth of s2
- * @s1: string 1
- * @s2: string 2
- * @n: size to take from s2
- *
- * Return: poiter to new string
- */
+  * string_nconcat - ...
+  * @s1: ...
+  * @s2: ...
+  * @n: ...
+  *
+  * Return: ...
+  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *a;
-	unsigned int s1Len, s2Len;
-	unsigned int i, I;
-	char nul = '\0';
-	int tots;
+	unsigned int i = 0, j = 0, k = 0, l = 0;
+	char *str;
 
 	if (s1 == NULL)
-		s1 = &nul;
+		s1 = "";
 	if (s2 == NULL)
-		s2 = &nul;
+		s2 = "";
 
-	s1Len = _strlen(s1);
-	s2Len = _strlen(s2);
+	while (s1[i])
+		i++;
 
-	if (n >= s2Len)
-		tots = s2Len + s1Len;
+	while (s2[k])
+		k++;
+
+	if (n >= k)
+		l = i + k;
 	else
-		tots = s1Len + n;
+		l = i + n;
 
-	a = malloc(tots + 1);
-	if (a == NULL)
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
 		return (NULL);
 
-	i = 0, I = 0;
-	while (s1[i] != '\0')
-		a[I++] = s1[i++];
-	i = 0;
-	while (s2[i] != '\0' && n-- != 0)
-		a[I++] = s2[i++];
-	a[I] = '\0';
+	k = 0;
+	while (j < l)
+	{
+		if (j <= i)
+			str[j] = s1[j];
 
-	return (a);
+		if (j >= i)
+		{
+			str[j] = s2[k];
+			k++;
+		}
+		j++;
+	}
+	str[j] = '\0';
+	return (str);
 }
