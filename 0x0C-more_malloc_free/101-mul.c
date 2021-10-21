@@ -1,99 +1,72 @@
+#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 
 /**
- * is_digit - checks if a string contains a non-digit char
- * @s: string to be evaluated
- *
- * Return: 0 if a non-digit is found, 1 otherwise
- */
-int is_digit(char *s)
-{
-	int i = 0;
+* main - multiplies two positive numbers.
+* @argc: number of arguments
+* @argv: the values in each argc element
+*
+* Description: its like infinite add but with multiplication
+* Return: print the result. return 0 if success
+*/
 
-	while (s[i])
+# IF EITHER NUMBER ARE ZERO RETURN 0;
+##SHOULD CHECK IF BEGINNING LEADING NUMBER IS ZERO. 
+
+
+int main(int argc, char **argv)
+{
+	int size1 = 0;
+	int size2 = 0;
+	int product_size = 0;
+	int product = 0;
+	int overflow = 0;
+	int index = 0;
+	int tab = 0;
+
+	while (argv[1][size1])//strlength and checks if digit
 	{
-		if (s[i] < '0' || s[i] > '9')
-			return (0);
-		i++;
+		ISDIGIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\##################
+		size1++;
 	}
-	return (1);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: string to evaluate
- *
- * Return: the length of the string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
+	while (argv[2][size2])//strlength and checks if digit
 	{
-		i++;
+		ISITADIGIT########################################################
+		size2++;
 	}
-	return (i);
-}
-
-/**
- * errors - handles errors for main
- */
-void errors(void)
-{
-	printf("Error\n");
-	exit(98);
-}
-
-/**
- * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: always 0 (Success)
- */
-int main(int argc, char *argv[])
-{
-	char *s1, *s2;
-	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
-
-	s1 = argv[1], s2 = argv[2];
-	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-		errors();
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-	len = len1 + len2 + 1;
-	result = malloc(sizeof(int) * len);
-	if (!result)
-		return (1);
-	for (i = 0; i <= len1 + len2; i++)
-		result[i] = 0;
-	for (len1 = len1 - 1; len1 >= 0; len1--)
+	product_size = size1 + size2 + 1;//calculate the range we need
+	product = malloc(sizeof(char) * product_size);//allocates space
+	if (!product)
+		return (98);
+	while (product_size >= 0)//initialize all to 0
+		product[product_size] = '0';
+	size1--;//because length is 1 more than index
+	size2--;
+	while (size2 >= 0)
 	{
-		digit1 = s1[len1] - '0';
-		carry = 0;
-		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
+		index = tab;
+		for (j = size1; j >= 0; j--)
 		{
-			digit2 = s2[len2] - '0';
-			carry += result[len1 + len2 + 1] + (digit1 * digit2);
-			result[len1 + len2 + 1] = carry % 10;
-			carry /= 10;
+			product = (argv[1][j]-'0') * (argv[2][size2]-'0');
+			product += product[index] -'0';
+			product += overflow;
+			overflow = product / 10;
+			product[index] = product % 10 + '0';
+			index++;
 		}
-		if (carry > 0)
-			result[len1 + len2 + 1] += carry;
+		if (overflow)
+		{
+			product[index] = overflow;
+			index++;
+		}
+		overflow = 0;
+		size2--;
+		tab++;
 	}
-	for (i = 0; i < len - 1; i++)
-	{
-		if (result[i])
-			a = 1;
-		if (a)
-			_putchar(result[i] + '0');
-	}
-	if (!a)
-		_putchar('0');
-	_putchar('\n');
-	free(result);
+	product[index] ='\0';
+	reversestring\\\\\###########################################################
+	printf("%s\n", product);
+	free(product);
 	return (0);
 }
